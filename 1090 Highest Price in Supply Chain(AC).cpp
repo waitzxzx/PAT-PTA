@@ -4,15 +4,11 @@ using namespace std;
 const int N = 1e5+7;
 vector<int> graph[N];
 int level[N];
-bool visit[N]={false};
 void dfs(int v){
 	for(int i=0;i<graph[v].size();i++){
 		int cur = graph[v][i];
-		if(!visit[cur]){
-			level[cur] = level[v]+1;
-			visit[cur] = true;
-			dfs(cur);
-		}
+		level[cur] = level[v]+1;
+		dfs(cur);
 	}
 }
 int main(void){
@@ -24,11 +20,9 @@ int main(void){
 		if(a==-1) root = i;
 		else{
 			graph[a].push_back(i);
-			graph[i].push_back(a);
 		} 
 	} 
 	level[root]=0;
-	visit[root]=true;
 	dfs(root);
 	int depth=0,cnt = 0;
 	for(int i=0;i<n;i++){

@@ -9,7 +9,7 @@ struct Node{
 		return key<other.key;
 	}
 	Node(){
-		address = -1111111;key = 10011001;next=-1111111;
+		address = -1;key = 0;next=-1;
 	}
 	Node(int a,int k,int n):address(a),key(k),next(n){ }
 };
