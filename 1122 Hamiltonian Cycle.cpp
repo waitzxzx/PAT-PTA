@@ -34,9 +34,7 @@ int main(void){
 					flag =false;
 					break;
 				}
-				
-					visit[seq[i+1]]=true;
-				
+				visit[seq[i+1]]=true;
 			}
 			if(flag){
 				for(int i=1;i<=N;i++){
